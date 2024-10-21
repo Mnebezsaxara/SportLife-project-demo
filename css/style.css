@@ -971,6 +971,17 @@ h2 {
     background-color: #0056b3;
 }
 
+#menu {
+    list-style-type: none;
+}
+li #menu {
+    padding: 10px;
+    cursor: pointer;
+}
+.selected {
+    background-color: lightblue;
+}
+
 /* Hide video and show background image on mobile */
 @media (max-width: 768px) {
     .field-section video {

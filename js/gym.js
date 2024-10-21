@@ -32,51 +32,36 @@ function closeModal() {
 
 // ASSIK 5 - MANSUR'S BLOCK
 
-// Выбираем кнопку и скрытый текст
 const readMoreBtn = document.getElementById('readMoreBtn');
 const moreText = document.getElementById('moreText');
-readMoreBtn.style.backgroundColor = "#43964f";
 
-// Обработчик для нажатия на кнопку
 readMoreBtn.addEventListener('click', function () {
+    readMoreBtn.style.backgroundColor = "#43964f";
     clickSound.play();
-        // Проверяем, скрыт ли текст
     if (moreText.style.display === "none" || moreText.style.display === "") {
-        // Показываем текст и меняем текст кнопки
         moreText.style.display = "inline";
         readMoreBtn.textContent = "Скрыть";
     } else {
-        // Скрываем текст и меняем текст кнопки
         moreText.style.display = "none";
         readMoreBtn.textContent = "Читать больше";
+        readMoreBtn.style.backgroundColor = "";
     }
 });
 
-
-// Выбираем кнопку и скрытые отзывы
 const reviewBtn = document.querySelector('.review-btn');
 const hiddenReviews = document.querySelectorAll('.hidden-review');
-const reviewSection = document.querySelector('.review');
 
-// Функция для обработки нажатия на кнопку
 reviewBtn.addEventListener('click', function () {
     clickSound.play();
-    // Проверяем состояние текста кнопки через textContent
     if (reviewBtn.textContent === "Смотреть дальше") {
-        // Показываем все скрытые изображения
         hiddenReviews.forEach(img => {
-            img.style.display = "block"; // Меняем стиль через display
+            img.style.display = "block";
         });
-
-        // Меняем текст кнопки с помощью textContent
         reviewBtn.textContent = "Скрыть";
     } else {
-        // Скрываем все изображения
         hiddenReviews.forEach(img => {
-            img.style.display = "none"; // Меняем стиль обратно
+            img.style.display = "none";
         });
-
-        // Меняем текст кнопки обратно через innerText
         reviewBtn.innerText = "Смотреть дальше";
     }
 });
@@ -175,3 +160,16 @@ ymaps.ready(function () {
 });
 
 
+const menuItems = document.querySelectorAll('#menu li');
+        let currentIndex = 0;
+        menuItems[currentIndex].classList.add('selected');
+
+        document.addEventListener('keydown', function (event) {
+            menuItems[currentIndex].classList.remove('selected');
+            if (event.key === 'ArrowDown') {
+                currentIndex = (currentIndex + 1) % menuItems.length;
+            } else if (event.key === 'ArrowUp') {
+                currentIndex = (currentIndex - 1 + menuItems.length) % menuItems.length;
+            }
+            menuItems[currentIndex].classList.add('selected');
+        });
