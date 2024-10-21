@@ -1,0 +1,1142 @@
+/* Link the Montserrat font */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+
+/* General Styles */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 18px; /* Increase the base font size */
+    color: #ffffff;
+}
+
+/* For bold headings or important text */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.bold-text {
+    font-weight: 600;
+}
+.more-text {
+    color: #6c757d;
+    display: none;
+}
+
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 50px 0; /* Increased padding for vertical height */
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #43964f;
+}
+
+footer h5 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+footer .list-unstyled li {
+    margin-bottom: 10px;
+}
+
+footer .list-unstyled li a {
+    font-size: 0.9rem;
+}
+
+footer p {
+    font-size: 0.85rem;
+}
+
+footer .social-icons {
+    margin-top: 20px;
+}
+
+.footer-logo {
+    width: 120px;
+}
+
+.social-icons a {
+    font-size: 1.5rem;
+}
+
+.text-center {
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.mt-4 {
+    margin-top: 2rem;
+}
+
+/* Thumbnail Images - Static Size */
+.gallery-grid img {
+    width: 70px; /* Fixed width */
+    height: 70px; /* Fixed height */
+    object-fit: cover; /* Ensures image fits within the defined area */
+    cursor: pointer;
+    border-radius: 8px;
+    transition: none; /* Disable hover animation */
+}
+
+/* Ensure no hover animation on thumbnails */
+.gallery-grid img:hover {
+    transform: none; /* Disable scaling on hover */
+}
+
+#main-image {
+    width: 760px; /* Fixed width */
+    height: 570px; /* Fixed height */
+    object-fit: cover; /* Ensures image fits within the defined area */
+    border-radius: 8px;
+    cursor: pointer;
+    transition: none; /* Disable hover animation */
+}
+
+/* Remove any scaling or animation on hover */
+#main-image:hover {
+    transform: none; /* Disable scaling */
+}
+
+/* Modal for Fullscreen Image */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.main-img {
+    width: 100%;
+    height: 500px; /* Static size for main image */
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Gallery grid for thumbnails */
+.gallery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px; /* Adjust gap between thumbnails */
+    justify-content: flex-start;
+}
+
+/* Thumbnail images */
+.gallery-thumb {
+    width: 100px; /* Static width for thumbnails */
+    height: 100px; /* Static height for thumbnails */
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+/* Modernized Typography */
+.text-modern {
+    font-family: "Montserrat", sans-serif;
+    padding: 20px;
+    border: 2px solid #0a1f44; /* Adding a border/edge */
+    border-radius: 10px; /* Rounded corners for a modern look */
+    box-shadow: 0 4px 15px rgba(0, 31, 68, 0.05); /* Light shadow for depth */
+}
+
+.modern-heading {
+    font-size: 1.8rem; /* Increase heading size */
+    font-weight: 700;
+    color: #0a1f44; /* Darker text for heading */
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* Optional: Add a small underline effect under the heading */
+.modern-heading::after {
+    content: "";
+    width: 80px;
+    height: 3px;
+    background-color: #ffaa00; /* Accent color */
+    display: block;
+    margin-top: 5px;
+}
+
+.modern-description {
+    font-size: 1.1rem;
+    line-height: 1.8; /* Add more line spacing for readability */
+    color: #6c757d; /* Muted gray text */
+}
+
+/* Highlight Key Phrases */
+.modern-description span {
+    font-weight: 600; /* Bold important text */
+    color: #0a1f44; /* Darker highlight for key phrases */
+}
+
+/* Ensure that map and contact info align correctly */
+.info-section {
+    background-color: #fff;
+    padding: 50px 0;
+}
+
+.info-section {
+    max-width: 100%;
+}
+
+.info-heading {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #0a1f44;
+    margin-bottom: 10px;
+}
+
+.info-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #6c757d;
+    margin-bottom: 20px;
+}
+
+.info-section .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.row.align-items-center {
+    align-items: center;
+    padding-right: 700px;
+}
+
+@media (min-width: 992px) {
+    .info-section .row {
+        display: flex;
+        align-items: center;
+    }
+
+    .info-section .col-lg-6 {
+        padding-left: 430px;
+    }
+
+    /* Adjust map size */
+    #yandex-map {
+        width: 660px;
+        height: 400px;
+    }
+}
+
+.col-lg-6 {
+    max-width: 50%; /* Ensure both map and contact info share 50% of the space */
+}
+
+.brief-info h2 {
+    font-size: 3rem; /* Ensure the numbers are prominent */
+    font-weight: bold;
+    color: #dc3545; /* Same red color as in fields */
+}
+
+.brief-info p {
+    font-size: 1.2rem;
+    color: #6c757d; /* Muted gray text */
+}
+
+/* Coaches Section Styles */
+.coaches-section {
+    padding: 50px 0;
+    background-color: #ffffff; /* Light background to distinguish section */
+}
+
+.coach-card {
+    border: none;
+    box-shadow: none;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+    border-radius: 0;
+    overflow: hidden;
+    background-color: #ffffff;
+    height: 500px; /* Increased height for better visibility */
+}
+
+.coach-card img {
+    height: 500px; /* Increased image height for better visibility */
+    width: 100%;
+    object-fit: cover; /* Ensures the photo maintains aspect ratio */
+    border-bottom: 5px solid #ffffff;
+}
+
+.coach-card .card-body {
+    padding: 20px;
+    height: 150px; /* Allocated height for text content */
+}
+
+.coach-card h5 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #0a1f44;
+    margin-bottom: 15px;
+}
+
+.coach-card p {
+    font-size: 1rem;
+    color: #6c757d;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* Spacing for rows */
+.coaches-section .row {
+    margin-bottom: 30px;
+}
+
+/* General button styles for trainer cards */
+.coach-card .btn {
+    background-color: #0a1f44;
+    color: #ffffff;
+    font-size: 1rem;
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.coach-card .btn:hover {
+    background-color: #ffaa00;
+    color: #000;
+}
+
+/* General Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10px; /* Reduced vertical padding for a smaller height */
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Left and Right sections: Flexbox alignment */
+.nav-left {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-left a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.nav-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Logo Styling */
+.navbar-logo {
+    max-height: 45px; /* Keeping the height small */
+    width: auto; /* Auto-resizes based on height */
+    max-width: 200px; /* Adjust the width slightly for more horizontal space */
+    vertical-align: middle;
+}
+
+/* Hover Effects */
+.navbar a:hover {
+    color: #ffaa00;
+}
+
+/* Make sure the navbar stays fixed at the top */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Slight shadow for modern effect */
+    right: 0;
+    padding: 15px 0; /* Slightly larger padding for better spacing */
+}
+
+.container {
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.container-gym-info {
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.carousel-text-item h2 {
+    font-size: 1.8rem;
+    color: #0a1f44;
+}
+
+.carousel-text-item p {
+    font-size: 1rem;
+    color: #6c757d;
+    margin-top: 10px;
+}
+
+/* Photo Carousel Styling */
+.carousel-container {
+    max-width: 85%;
+    margin: 0 auto;
+    margin-top: 35px;
+}
+
+.carousel-item img {
+    height: 60vh;
+    object-fit: cover;
+}
+
+.btn-lg {
+    margin-top: 20px;
+    padding: 10px 30px;
+}
+
+.carousel-text-section {
+    text-align: center;
+    margin-top: 10px; /* Removes top margin */
+    padding: 15px 0;
+}
+
+.photo-carousel-section {
+    padding: 40px 0;
+    margin-bottom: 15px; /* Removes bottom margin */
+    padding-bottom: 0; /* Removes any extra padding */
+}
+
+.carousel-text-item {
+    display: none;
+}
+
+.carousel-text-item.active {
+    display: block;
+}
+
+.carousel-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #0a1f44;
+    margin-bottom: 15px;
+}
+
+.carousel-subtitle {
+    font-size: 1.2rem;
+    color: #6c757d;
+    margin-bottom: 20px;
+}
+
+/* General styles for the field sections */
+.field-section {
+    position: relative;
+    height: 100vh; /* Full screen height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Ensure videos fit inside */
+}
+
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the entire section */
+    z-index: 1;
+}
+
+.overlay {
+    position: absolute;
+    z-index: 2;
+    text-align: center;
+    color: white;
+}
+
+.overlay h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.overlay .btn {
+    margin-top: 20px;
+    padding: 10px 30px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+}
+
+.overlay .btn:hover {
+    background-color: #ffaa00;
+    color: #000;
+}
+
+/* Add slight darkening overlay on hover */
+.field-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 1;
+}
+
+.book-button {
+    position: fixed;
+    bottom: 40px;
+    right: 20px;
+    background-color: red;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.book-button:hover {
+    background-color: darkred;
+}
+
+.plan-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.plan-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.plan-card h4 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #000000;
+}
+
+.plan-card p {
+    font-size: 1.1rem;
+    color: #6c757d;
+}
+
+.plan-card ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.plan-card hr {
+    margin: 20px 0;
+}
+
+.subscription-section {
+    padding: 50px 0;
+    background-color: #fff;
+}
+
+.subscription-section h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #0a1f44; /* Slightly darker color for better readability */
+    margin-bottom: 40px;
+}
+
+.subscription-plan {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.subscription-plan h4 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.subscription-plan .price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000;
+    text-align: right;
+}
+
+.discount-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #e53935;
+    border: 2px dashed #e53935;
+    padding: 10px;
+    display: inline-block;
+}
+
+.subscription-plan ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+    font-size: 1.1rem;
+    color: #6c757d;
+}
+
+.subscription-plan ul li {
+    margin-bottom: 8px;
+}
+
+.subscription-plan ul li::before {
+    content: "•";
+    color: #000;
+    font-size: 1.5rem;
+    padding-right: 10px;
+    vertical-align: middle;
+}
+
+/* Additional improvements for spacing */
+.container-plans {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.subscription-plan h4 {
+    flex-grow: 1;
+}
+
+.subscription-plan .price {
+    min-width: 100px;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.row > [class*="col-"] {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.contact-location-container {
+    max-width: 1140px; /* Standard max width for better layout */
+    margin: 0 auto; /* Center the section */
+    padding: 0 15px; /* Responsive padding */
+}
+
+.contact-location-section {
+    background-color: #ffffff; /* Light background */
+    padding: 60px 0;
+}
+
+.contact-heading {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #0a1f44;
+    margin-bottom: 20px;
+}
+
+.contact-info {
+    font-size: 1.2rem;
+    color: #6c757d;
+    line-height: 1.6;
+    margin-left: -30px;
+    /* Shift the contact info to the left */
+}
+
+.contact-info a {
+    color: #ffaa00; /* Orange color for links */
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    color: #0a1f44;
+    text-decoration: underline;
+}
+
+.location-map {
+    width: 100%; /* Full width of the right column */
+    height: 400px; /* Height of the map */
+    background-color: #eaeaea; /* Placeholder in case the map doesn't load */
+    margin-left: 300px;
+}
+
+@media (max-width: 768px) {
+    .location-map {
+        margin-top: 30px; /* Add spacing between text and map for smaller screens */
+    }
+}
+
+/* Gym section styles */
+.gym-gallery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+    justify-content: flex-start;
+}
+
+.gym-main-img {
+    width: 760px;
+    height: 570px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.gym-gallery-thumb {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.gym-modern-heading {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #0a1f44;
+}
+
+.gym-modern-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #6c757d;
+}
+
+/* Beket Batyra section styles */
+.beket-gallery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+    justify-content: flex-start;
+}
+
+.beket-main-img {
+    width: 760px;
+    height: 570px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.beket-gallery-thumb {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.beket-modern-heading {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #0a1f44;
+}
+
+.beket-modern-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #6c757d;
+}
+
+/* Orynbaeva section styles */
+.oryn-gallery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+    justify-content: flex-start;
+}
+
+.oryn-main-img {
+    width: 760px;
+    height: 570px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.oryn-gallery-thumb {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.oryn-modern-heading {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #0a1f44;
+}
+
+.oryn-modern-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #6c757d;
+}
+
+.gym-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay h2 {
+    font-size: 2rem;
+    color: #fff;
+}
+
+.overlay .btn {
+    margin-top: 20px;
+    padding: 10px 30px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.overlay .btn:hover {
+    background-color: #ffaa00;
+    color: #000;
+}
+/* Тренера */
+.coach-card {
+    transition: transform 0.3s ease;
+}
+/* Section review */
+.review {
+    max-width: 1100px;
+    margin: 0 auto;
+    border: 2px solid #0a1f44;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 31, 68, 0.05);
+}
+.review-title {
+    color: #0a1f44;
+    font-size: 24px;
+    font-weight: 500px;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 колонки */
+    gap: 10px; /* промежуток между элементами */
+    padding: 10px 0;
+}
+.grid-img {
+    width: 300px; /* ширина 100% от ячейки */
+    border-radius: 8px; /* закругленные углы (по желанию) */
+}
+.hidden-review {
+    display: none;
+}
+.review-btn {
+    display: block;
+    background-color: #43964f;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+/* Contacts styles */
+.form {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
+    font-family: "Montserrat", sans-serif;
+    padding: 100px 0;
+}
+
+.form .greeting-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form h1,
+h2 {
+    margin: 0;
+    padding: 10px;
+}
+
+.form h1 {
+    font-size: 36px;
+    color: #007bff;
+}
+
+.form h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+.form form {
+    width: 400px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.form input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.form button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+}
+
+.form button:hover {
+    background-color: #0056b3;
+}
+
+/* Hide video and show background image on mobile */
+@media (max-width: 768px) {
+    .field-section video {
+        display: none; /* Hide videos on mobile */
+    }
+
+    .field-section {
+        height: 33vh; /* Set each section to 33% of viewport height */
+        background-size: cover;
+        background-position: center;
+    }
+
+    /* Define the static images for mobile */
+    #field1 {
+        background-image: url("../fields/photo_1_2024-09-21_21-37-12.jpg"); /* Image for Beket Batyra */
+    }
+    #field2 {
+        background-image: url("/fields/photo_2_2024-09-21_21-37-12.jpg"); /* Image for Orynbaeva */
+    }
+    #field3 {
+        background-image: url("/gym/DSV_1010.jpg"); /* Image for Gym */
+    }
+}
+
+@media (max-width: 768px) {
+    .overlay h2 {
+        font-size: 2rem; /* Smaller heading for mobile */
+    }
+
+    .overlay .btn {
+        padding: 5px 10px;
+        font-size: 14px; /* Smaller button size */
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Adjustments for tablets */
+    .overlay h2 {
+        font-size: 1.5rem; /* Reduce heading size */
+    }
+
+    .overlay .btn {
+        padding: 5px 10px;
+        font-size: 14px; /* Smaller button size */
+    }
+}
+
+@media (max-width: 768px) {
+    /* Adjust main image size */
+    .main-img {
+        width: 100%; /* Full width on mobile */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    /* Adjust thumbnail sizes in the gallery */
+    .gallery-thumb {
+        width: 60px; /* Smaller thumbnails on mobile */
+        height: 60px;
+    }
+
+    /* Reduce padding around gallery grid */
+    .gallery-grid {
+        gap: 5px; /* Smaller gaps between thumbnails */
+    }
+}
+
+@media (max-width: 768px) {
+    /* Reduce heading size for mobile */
+    .modern-heading {
+        font-size: 1.4rem; /* Smaller heading size */
+    }
+
+    .modern-description {
+        font-size: 1rem; /* Adjust description size */
+        line-height: 1.5; /* Tighter line spacing */
+    }
+
+    /* Reduce button sizes */
+    .btn {
+        font-size: 14px;
+        padding: 8px 16px; /* Smaller padding for buttons */
+    }
+}
+
+/* Subscription plans responsiveness for mobile */
+@media (max-width: 768px) {
+    .subscription-plan {
+        display: block;
+        margin-bottom: 15px; /* Less space between plans */
+        padding: 10px; /* Reduce padding for more compact look */
+    }
+
+    /* Adjust title sizes */
+    .subscription-plan h4 {
+        font-size: 1rem; /* Smaller plan title */
+        margin-bottom: 5px; /* Less space below title */
+    }
+
+    /* Adjust price sizes */
+    .subscription-plan .price {
+        font-size: 1.2rem; /* Reduce price font size */
+        color: #000; /* Keep price bold but smaller */
+    }
+
+    /* Adjust details in the plan */
+    .subscription-plan ul {
+        font-size: 0.9rem; /* Smaller details */
+        padding-left: 15px;
+    }
+
+    .subscription-plan ul li {
+        margin-bottom: 5px; /* Reduce space between list items */
+    }
+
+    /* Add a bit more space between the price and the list of details */
+    .subscription-plan .price {
+        margin-bottom: 8px; /* Slightly increase space below price */
+    }
+
+    .container-plans {
+        max-width: 90%; /* Reduce the max-width for mobile */
+        margin: 0 auto;
+    }
+}
+
+/* Footer adjustments for mobile */
+@media (max-width: 768px) {
+    footer {
+        padding: 20px 0; /* Reduce padding on mobile */
+    }
+
+    footer .social-icons {
+        margin-top: 10px; /* Adjust spacing for social icons */
+    }
+
+    footer h5 {
+        font-size: 1.2rem; /* Smaller footer heading */
+    }
+
+    footer p,
+    footer a {
+        font-size: 0.8rem; /* Adjust text size */
+    }
+}
+
+@media (max-width: 768px) {
+    .coach-card {
+        height: auto; /* Let card height adjust automatically */
+        padding: 10px; /* Reduce padding inside the card */
+    }
+
+    .coach-card img {
+        height: 150px; /* Smaller image height */
+        width: 100%; /* Full width image */
+        object-fit: cover; /* Ensure the image fits inside the card */
+    }
+
+    /* Reduce the margin between cards */
+    .row > .col-sm-6 {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    /* Ensure the cards take up half the width of the row */
+    .col-sm-6 {
+        flex: 0 0 50%; /* Each card takes 50% of the row */
+        max-width: 50%;
+    }
+}
