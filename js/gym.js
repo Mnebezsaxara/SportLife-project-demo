@@ -1,6 +1,5 @@
 var carousel = document.getElementById('gymCarousel');
 var textItems = document.querySelectorAll('.carousel-text-item');
-const clickSound = document.getElementById('clickSound');
 
 carousel.addEventListener('slide.bs.carousel', function (event) {
     textItems.forEach(function(item) {
@@ -30,14 +29,25 @@ function closeModal() {
 }
 
 
-// ASSIK 5 - MANSUR'S BLOCK
+
+document.querySelector('.burger').addEventListener('click', function(){
+    this.classList.toggle('active');
+    document.querySelector('.nav-left').classList.toggle('open');
+});
+
+
+
+
+
+
+
+
+
 
 const readMoreBtn = document.getElementById('readMoreBtn');
 const moreText = document.getElementById('moreText');
 
 readMoreBtn.addEventListener('click', function () {
-    readMoreBtn.style.backgroundColor = "#43964f";
-    clickSound.play();
     if (moreText.style.display === "none" || moreText.style.display === "") {
         moreText.style.display = "inline";
         readMoreBtn.textContent = "Скрыть";
@@ -48,28 +58,6 @@ readMoreBtn.addEventListener('click', function () {
     }
 });
 
-const reviewBtn = document.querySelector('.review-btn');
-const hiddenReviews = document.querySelectorAll('.hidden-review');
-
-reviewBtn.addEventListener('click', function () {
-    clickSound.play();
-    if (reviewBtn.textContent === "Смотреть дальше") {
-        hiddenReviews.forEach(img => {
-            img.style.display = "block";
-        });
-        reviewBtn.textContent = "Скрыть";
-    } else {
-        hiddenReviews.forEach(img => {
-            img.style.display = "none";
-        });
-        reviewBtn.innerText = "Смотреть дальше";
-    }
-});
-
-// ASSIK 5 - MANSUR'S BLOCK
-
-
-// ASSIK 5 - AITAS'S BLOCK
 const coaches = [
     {
         name: 'Владимир',
@@ -100,7 +88,7 @@ const coachesList = document.getElementById('coaches-list');
 function createCoachCard(coach) {
     return `
         <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
-            <div class="coach-card shadow-sm h-100" style="cursor: pointer;" onclick="playSound()">
+            <div class="coach-card shadow-sm h-100" style="cursor: pointer;">
                 <img src="${coach.image}" class="card-img-top" alt="${coach.name}">
                 <div class="card-body text-center">
                     <h5 class="card-title">${coach.name}</h5>
@@ -129,12 +117,6 @@ document.querySelectorAll('.coach-card').forEach(card => {
 });
 
 // Функция для воспроизведения звука
-
-// ASSIK 5 - AITAS'S BLOCK
-
-
-
-
 
 
 

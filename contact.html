@@ -26,39 +26,30 @@
             </a>
         </div>
 
-        <ul class="nav-right"></ul>
+        <div class="burger">
+            <span></span>
+        </div>
     </nav>
 </header>
-
 <section class="form">
     <div class="form-container">
-        <div class="greeting-container">
-            <h1 id="greeting"></h1>
-            <h2 id="currentTime"></h2>
-        </div>
-        
-        <form id="multiStepForm">
-            <div class="step">
-                <h2>Имя</h2>
-                <input type="text" id="name" name="name" required>
-                <button type="button" id="next1">Далее</button>
-            </div>
-        
-            <div class="step" style="display:none;">
-                <h2>Email</h2>
-                <input type="email" id="email" name="email" required>
-                <button type="button" id="prev1">Назад</button>
-                <button type="button" id="next2">Далее</button>
-            </div>
-        
-            <div class="step" style="display:none;">
-                <h2>Пароль</h2>
-                <input type="password" id="password" name="password" required>
-                <button type="button" id="prev2">Назад</button>
-                <button type="submit">Отправить</button>
-            </div>
+        <h2>Свяжитесь с нами</h2>
+        <form id="contactForm">
+            <label for="name">Имя:</label>
+            <input type="text" id="name" name="name" placeholder="Введите ваше имя">
+            <div id="nameError" class="error"></div>
+    
+            <label for="email">Адрес электронной почты:</label>
+            <input type="email" id="email" name="email" placeholder="Введите ваш email">
+            <div id="emailError" class="error"></div>
+    
+            <label for="phone">Номер телефона:</label>
+            <input type="text" id="phone" name="phone" placeholder="Введите ваш номер телефона">
+            <div id="phoneError" class="error"></div>
+    
+            <button type="submit">Отправить</button>
+            <div id="formMessage" class="success"></div>
         </form>
-        
     </div>
 </section>
 

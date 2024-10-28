@@ -254,23 +254,6 @@ footer .social-icons {
     padding-right: 700px;
 }
 
-@media (min-width: 992px) {
-    .info-section .row {
-        display: flex;
-        align-items: center;
-    }
-
-    .info-section .col-lg-6 {
-        padding-left: 430px;
-    }
-
-    /* Adjust map size */
-    #yandex-map {
-        width: 660px;
-        height: 400px;
-    }
-}
-
 .col-lg-6 {
     max-width: 50%; /* Ensure both map and contact info share 50% of the space */
 }
@@ -403,7 +386,52 @@ footer .social-icons {
 .navbar a:hover {
     color: #ffaa00;
 }
+.open {
+    display: flex !important;
+}
+.burger {
+    display: none;
+    position: relative;
+    z-index: 50;
+    align-items: center;
+    justify-content: flex-end;
+    width: 30px;
+    height: 18px;
+    order: 3;
+}
+.burger span {
+    height: 2px;
+    width: 80%;
+    transform: scale(1);
+    background-color: #ffaa00;
+}
+.burger::before,
+.burger::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: #ffaa00;
+    transition: all 0.3s ease 0s;
+}
+.burger::before {
+    top: 0;
+}
+.burger::after {
+    bottom: 0;
+}
 
+.burger.active span {
+    transform: scale(0);
+}
+.burger.active::before {
+    top: 50%;
+    transform: rotate(-45deg) translate(0, -50%);
+}
+.burger.active::after {
+    bottom: 50%;
+    transform: rotate(45deg) translate(0, 50%);
+}
 /* Make sure the navbar stays fixed at the top */
 header {
     position: fixed;
@@ -728,12 +756,6 @@ header {
     margin-left: 300px;
 }
 
-@media (max-width: 768px) {
-    .location-map {
-        margin-top: 30px; /* Add spacing between text and map for smaller screens */
-    }
-}
-
 /* Gym section styles */
 .gym-gallery-grid {
     display: flex;
@@ -869,108 +891,97 @@ header {
 .coach-card {
     transition: transform 0.3s ease;
 }
-/* Section review */
-.review {
-    max-width: 1100px;
-    margin: 0 auto;
-    border: 2px solid #0a1f44;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 31, 68, 0.05);
-}
-.review-title {
-    color: #0a1f44;
-    font-size: 24px;
-    font-weight: 500px;
-    text-align: center;
-    padding: 10px 0;
-}
 
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 колонки */
-    gap: 10px; /* промежуток между элементами */
-    padding: 10px 0;
-}
-.grid-img {
-    width: 300px; /* ширина 100% от ячейки */
-    border-radius: 8px; /* закругленные углы (по желанию) */
-}
-.hidden-review {
-    display: none;
-}
-.review-btn {
-    display: block;
-    background-color: #43964f;
-    color: #fff;
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    margin-bottom: 20px;
-}
 /* Contacts styles */
+
 .form {
-    height: 100%;
-    margin: 0;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    background-color: #f4f4f4;
-    font-family: "Montserrat", sans-serif;
-    padding: 100px 0;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f0f2f5;
 }
 
-.form .greeting-container {
+.form-container {
+    background-color: #ffffff;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
     text-align: center;
-    margin-bottom: 20px;
 }
 
-.form h1,
-h2 {
-    margin: 0;
-    padding: 10px;
+.form-container h2 {
+    margin-bottom: 15px;
+    color: #0a1f44;
 }
 
-.form h1 {
-    font-size: 36px;
-    color: #007bff;
+.form-container label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #0a1f44;
 }
 
-.form h2 {
-    font-size: 24px;
-    color: #333;
-}
-
-.form form {
-    width: 400px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
-
-.form input {
+.form-container input[type="text"] {
     width: 100%;
     padding: 10px;
-    margin-top: 10px;
-    border-radius: 5px;
+    margin-bottom: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
 }
-
-.form button {
+.form-container input[type="email"] {
     width: 100%;
     padding: 10px;
-    margin-top: 10px;
-    border-radius: 5px;
-    background-color: #007bff;
-    color: white;
+    margin-bottom: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+.form-container input[type="text"]:focus {
+    border-color: #0d6efd;
+    outline: none;
+}
+.form-container input[type="email"]:focus {
+    border-color: #0d6efd;
+    outline: none;
+}
+
+.form-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #0d6efd;
+    color: #fff;
     border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
 }
 
-.form button:hover {
+.form-container button:hover {
     background-color: #0056b3;
 }
 
+.form-container .error {
+    color: #ff4d4d;
+    font-size: 0.85em;
+    margin-top: -5px;
+    margin-bottom: 10px;
+}
+
+.form-container .success {
+    color: #28a745;
+    font-size: 1em;
+    margin-top: 10px;
+}
 #menu {
     list-style-type: none;
 }
@@ -979,9 +990,9 @@ li #menu {
     cursor: pointer;
 }
 .selected {
-    background-color: lightblue;
+    background-color: #ffaa00;
+    border-radius: 5px;
 }
-
 /* Hide video and show background image on mobile */
 @media (max-width: 768px) {
     .field-section video {
@@ -1004,9 +1015,12 @@ li #menu {
     #field3 {
         background-image: url("/gym/DSV_1010.jpg"); /* Image for Gym */
     }
-}
-
-@media (max-width: 768px) {
+    .burger {
+        margin-left: 15px !important;
+    }
+    .nav-left li > a {
+        font-size: 20px !important;
+    }
     .overlay h2 {
         font-size: 2rem; /* Smaller heading for mobile */
     }
@@ -1015,22 +1029,41 @@ li #menu {
         padding: 5px 10px;
         font-size: 14px; /* Smaller button size */
     }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-    /* Adjustments for tablets */
-    .overlay h2 {
-        font-size: 1.5rem; /* Reduce heading size */
+    .navbar {
+        padding: 20px 20px;
     }
 
-    .overlay .btn {
-        padding: 5px 10px;
-        font-size: 14px; /* Smaller button size */
+    .carousel-item {
+        height: 600px;
     }
-}
+    .py-5 {
+        padding: 0 !important;
+    }
+    .text-center {
+        padding-bottom: 0;
+    }
+    .col-lg-8 {
+        margin-bottom: 20px;
+    }
+    .coaches-section {
+        padding: 0;
+    }
+    .coach-card {
+        height: auto; /* Let card height adjust automatically */
+        padding: 10px; /* Reduce padding inside the card */
+    }
 
-@media (max-width: 768px) {
-    /* Adjust main image size */
+    .coach-card img {
+        height: 150px; /* Smaller image height */
+        width: 100%; /* Full width image */
+        object-fit: cover; /* Ensure the image fits inside the card */
+    }
+
+    /* Reduce the margin between cards */
+    .row > .col-sm-6 {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
     .main-img {
         width: 100%; /* Full width on mobile */
         height: auto; /* Maintain aspect ratio */
@@ -1046,10 +1079,6 @@ li #menu {
     .gallery-grid {
         gap: 5px; /* Smaller gaps between thumbnails */
     }
-}
-
-@media (max-width: 768px) {
-    /* Reduce heading size for mobile */
     .modern-heading {
         font-size: 1.4rem; /* Smaller heading size */
     }
@@ -1064,10 +1093,29 @@ li #menu {
         font-size: 14px;
         padding: 8px 16px; /* Smaller padding for buttons */
     }
-}
 
-/* Subscription plans responsiveness for mobile */
-@media (max-width: 768px) {
+    /* Ensure the cards take up half the width of the row */
+    .col-sm-6 {
+        flex: 0 0 50%; /* Each card takes 50% of the row */
+        max-width: 50%;
+    }
+    .col-lg-6 {
+        padding: 0 !important;
+        width: 100%;
+    }
+    .contact-info {
+        padding-left: 30px;
+    }
+    .row.align-items-center {
+        padding-right: 0;
+    }
+    .location-map {
+        display: block;
+        margin: 0;
+    }
+    .contact-location-section {
+        margin-bottom: 15px;
+    }
     .subscription-plan {
         display: block;
         margin-bottom: 15px; /* Less space between plans */
@@ -1105,10 +1153,6 @@ li #menu {
         max-width: 90%; /* Reduce the max-width for mobile */
         margin: 0 auto;
     }
-}
-
-/* Footer adjustments for mobile */
-@media (max-width: 768px) {
     footer {
         padding: 20px 0; /* Reduce padding on mobile */
     }
@@ -1127,27 +1171,132 @@ li #menu {
     }
 }
 
-@media (max-width: 768px) {
-    .coach-card {
-        height: auto; /* Let card height adjust automatically */
-        padding: 10px; /* Reduce padding inside the card */
+@media (min-width: 769px) and (max-width: 1259px) {
+    .field-section video {
+        display: none; /* Hide videos on mobile */
     }
 
-    .coach-card img {
-        height: 150px; /* Smaller image height */
-        width: 100%; /* Full width image */
-        object-fit: cover; /* Ensure the image fits inside the card */
+    .field-section {
+        width: 100%;
+        height: 33vh; /* Set each section to 33% of viewport height */
+        background-size: cover;
+        background-position: center;
     }
 
-    /* Reduce the margin between cards */
-    .row > .col-sm-6 {
-        padding-left: 5px;
-        padding-right: 5px;
+    /* Define the static images for mobile */
+    #field1 {
+        background-image: url("../fields/photo_1_2024-09-21_21-37-12.jpg"); /* Image for Beket Batyra */
+    }
+    #field2 {
+        background-image: url("/fields/photo_2_2024-09-21_21-37-12.jpg"); /* Image for Orynbaeva */
+    }
+    #field3 {
+        background-image: url("/gym/DSV_1010.jpg"); /* Image for Gym */
     }
 
-    /* Ensure the cards take up half the width of the row */
-    .col-sm-6 {
-        flex: 0 0 50%; /* Each card takes 50% of the row */
-        max-width: 50%;
+    .overlay h2 {
+        font-size: 2.5rem; /* Reduce heading size */
+    }
+
+    .overlay .btn {
+        padding: 15px 20px;
+        font-size: 18px; /* Smaller button size */
+    }
+    .col-lg-8 {
+        margin-bottom: 20px;
+    }
+    .col-lg-6 {
+        text-align: center;
+        max-width: 100%;
+    }
+    .location-map {
+        margin: 0;
+    }
+    .row.align-items-center {
+        padding: 0;
+    }
+    .coaches-section {
+        padding: 0;
+    }
+}
+@media (max-width: 1100px) {
+    .burger {
+        display: flex;
+        margin-left: 70px;
+    }
+    .nav-left {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 50;
+        overflow-y: auto;
+        padding: 50px 40px;
+        background-color: #0a1f44;
+        justify-content: center;
+        align-items: center;
+        animation: burgerAnimation 0.4s;
+    }
+    .nav-left li > a {
+        font-size: 35px;
+        color: white;
+    }
+}
+
+@media (min-width: 1259px) and (max-width: 1520px) {
+    .field-section video {
+        display: none; /* Hide videos on mobile */
+    }
+
+    .field-section {
+        width: 100%;
+        height: 33vh; /* Set each section to 33% of viewport height */
+        background-size: cover;
+        background-position: bottom;
+    }
+
+    /* Define the static images for mobile */
+    #field1 {
+        background-image: url("../fields/photo_1_2024-09-21_21-37-12.jpg"); /* Image for Beket Batyra */
+    }
+    #field2 {
+        background-image: url("/fields/photo_2_2024-09-21_21-37-12.jpg"); /* Image for Orynbaeva */
+    }
+    #field3 {
+        background-image: url("/gym/DSV_1010.jpg"); /* Image for Gym */
+    }
+
+    .overlay h2 {
+        font-size: 2.5rem; /* Reduce heading size */
+    }
+
+    .overlay .btn {
+        padding: 15px 20px;
+        font-size: 18px; /* Smaller button size */
+    }
+    .info-section .row {
+        display: flex;
+        align-items: center;
+    }
+
+    .info-section .col-lg-6 {
+        padding-left: 430px;
+    }
+
+    /* Adjust map size */
+    #yandex-map {
+        width: 660px;
+        height: 400px;
+    }
+}
+@media (min-width: 1520px) {
+    #yandex-map {
+        width: 660px;
+        height: 400px;
     }
 }

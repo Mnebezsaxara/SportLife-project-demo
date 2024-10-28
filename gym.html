@@ -15,10 +15,10 @@
 <header>
     <nav class="navbar" id="menu">
         <ul class="nav-left">
-            <li><a href="home.html">ГЛАВНАЯ</a></li>
-            <li><a href="gym.html">ТРЕНАЖЕРНЫЙ ЗАЛ</a></li>
-            <li><a href="field-beketbatyra.html">ПОЛЯ</a></li>
-            <li><a href="contact.html">КОНТАКТЫ</a></li>
+            <li><a class="nav-link" href="home.html">ГЛАВНАЯ</a></li>
+            <li><a class="nav-link" href="gym.html">ТРЕНАЖЕРНЫЙ ЗАЛ</a></li>
+            <li><a class="nav-link" href="field-beketbatyra.html">ПОЛЯ</a></li>
+            <li><a class="nav-link" href="contact.html">КОНТАКТЫ</a></li>
         </ul>
 
         <div class="nav-center">
@@ -27,7 +27,9 @@
             </a>
         </div>
 
-        <ul class="nav-right"></ul>
+        <div class="burger">
+            <span></span>
+        </div>
     </nav>
 </header>
 
@@ -119,7 +121,7 @@
             <span id="moreText" class="more-text">
                 Мы также предлагаем индивидуальные тренировки с профессиональными тренерами.
             </span>
-            <button id="readMoreBtn" class="btn btn-primary">Читать больше</button>
+            <button id="readMoreBtn" class="btn btn-primary" >Читать больше</button>
         </div>
     </div>
 
@@ -195,25 +197,6 @@
     </div>
 </section>
 
-<!-- Подключаем аудиоэффект -->
-<audio id="clickSound" src="sounds/spongebob-boowomp_xgIJ9L1D.mp3" preload="auto"></audio>
-
-
-<!-- Отзывы -->
- <section class="review">
-    <div class="container">
-        <h2 class="review-title">Отзывы</h2>
-        <div class="grid-container">
-            <img src="gym/Снимок экрана 2024-10-18 222546.png" alt="" class="grid-img">
-            <img src="gym/Снимок экрана 2024-10-18 222546.png" alt="" class="grid-img">
-            <img src="gym/Снимок экрана 2024-10-18 222546.png" alt="" class="grid-img">
-            <img src="gym/Снимок экрана 2024-10-18 222546.png" alt="" class="grid-img hidden-review">
-            <img src="gym/Снимок экрана 2024-10-18 222546.png" alt="" class="grid-img hidden-review">
-            <img src="gym/Снимок экрана 2024-10-18 222546.png" alt="" class="grid-img hidden-review">
-        </div>
-        <button class="review-btn">Смотреть дальше</button>
-    </div>
- </section>
 
 <!-- Contact & Location Section -->
 <section class="contact-location-section py-5">

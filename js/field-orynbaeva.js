@@ -29,6 +29,12 @@ function closeModal() {
 }
 
 
+document.querySelector('.burger').addEventListener('click', function(){
+    this.classList.toggle('active');
+    document.querySelector('.nav-left').classList.toggle('open');
+});
+
+
 
 
 const menuItems = document.querySelectorAll('#menu li');

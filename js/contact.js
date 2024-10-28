@@ -1,79 +1,94 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const steps = document.querySelectorAll(".step");
-    let currentStep = 0;
 
-    steps[currentStep].style.display = "block";
+document.querySelector('.burger').addEventListener('click', function(){
+    this.classList.toggle('active');
+    document.querySelector('.nav-left').classList.toggle('open');
+});
 
-    document.getElementById("next1").addEventListener("click", function () {
-        steps[currentStep].style.display = "none";
-        currentStep++;
-        steps[currentStep].style.display = "block";
-    });
 
-    document.getElementById("prev1").addEventListener("click", function () {
-        steps[currentStep].style.display = "none";
-        currentStep--;
-        steps[currentStep].style.display = "block";
-    });
+document.addEventListener('DOMContentLoaded', function () {
+    // Загружаем данные из локального хранилища при загрузке страницы
+    loadFormData();
 
-    document.getElementById("next2").addEventListener("click", function () {
-        steps[currentStep].style.display = "none";
-        currentStep++;
-        steps[currentStep].style.display = "block";
-    });
-
-    document.getElementById("prev2").addEventListener("click", function () {
-        steps[currentStep].style.display = "none";
-        currentStep--;
-        steps[currentStep].style.display = "block";
-    });
-
-    function showGreetingAndTime() {
-        const currentTimeElement = document.getElementById('currentTime');
-        const greetingElement = document.getElementById('greeting');
-
-        const now = new Date();
-        const currentHour = now.getHours();
-        const currentTime = now.toLocaleTimeString();
-
-        let greeting;
-        if (currentHour >= 6 && currentHour < 12) {
-            greeting = "Доброе утро!";
-        } else if (currentHour >= 12 && currentHour < 18) {
-            greeting = "Добрый день!";
-        } else if (currentHour >= 18 && currentHour < 22) {
-            greeting = "Добрый вечер!";
-        } else {
-            greeting = "Доброй ночи!";
-        }
-
-        greetingElement.textContent = greeting;
-        currentTimeElement.textContent = "Текущее время: " + currentTime;
-    }
-
-    showGreetingAndTime();
-
-    document.getElementById("multiStepForm").addEventListener("submit", function (event) {
+    // Обработчик отправки формы
+    document.getElementById('contactForm').addEventListener('submit', function (event) {
         event.preventDefault();
 
-        document.getElementById("multiStepForm").style.display = "none";
+        document.getElementById('nameError').textContent = '';
+        document.getElementById('emailError').textContent = '';
+        document.getElementById('phoneError').textContent = '';
+        document.getElementById('formMessage').textContent = '';
 
-        const successMessage = "Ваша заявка принята!";
-        const userName = document.getElementById('name').value.trim();
-        alert(`${userName}, ${successMessage}`);
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+
+        let valid = true;
+
+        if (name.length < 2) {
+            document.getElementById('nameError').textContent = 'Имя должно содержать не менее 2 символов.';
+            valid = false;
+        }
+
+        const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        if (!emailPattern.test(email)) {
+            document.getElementById('emailError').textContent = 'Введите корректный адрес электронной почты.';
+            valid = false;
+        }
+
+        const phonePattern = /^[0-9]{10,15}$/;
+        if (!phonePattern.test(phone)) {
+            document.getElementById('phoneError').textContent = 'Введите корректный номер телефона (10-15 цифр).';
+            valid = false;
+        }
+
+        if (valid) {
+            document.getElementById('formMessage').textContent = 'Форма успешно отправлена!';
+
+            // Сохраняем данные в локальное хранилище
+            saveFormData(name, email, phone);
+
+            // Очищаем форму
+            document.getElementById('contactForm').reset();
+        }
     });
 });
 
-const menuItems = document.querySelectorAll('#menu li');
-        let currentIndex = 0;
-        menuItems[currentIndex].classList.add('selected');
+// Функция для сохранения данных в локальное хранилище
+function saveFormData(name, email, phone) {
+    localStorage.setItem('name', name);
+    localStorage.setItem('email', email);
+    localStorage.setItem('phone', phone);
+}
 
-        document.addEventListener('keydown', function (event) {
-            menuItems[currentIndex].classList.remove('selected');
-            if (event.key === 'ArrowDown') {
-                currentIndex = (currentIndex + 1) % menuItems.length;
-            } else if (event.key === 'ArrowUp') {
-                currentIndex = (currentIndex - 1 + menuItems.length) % menuItems.length;
-            }
-            menuItems[currentIndex].classList.add('selected');
-        });
+// Функция для загрузки данных из локального хранилища
+function loadFormData() {
+    const savedName = localStorage.getItem('name');
+    const savedEmail = localStorage.getItem('email');
+    const savedPhone = localStorage.getItem('phone');
+
+    if (savedName) {
+        document.getElementById('name').value = savedName;
+    }
+    if (savedEmail) {
+        document.getElementById('email').value = savedEmail;
+    }
+    if (savedPhone) {
+        document.getElementById('phone').value = savedPhone;
+    }
+}
+
+
+
+const menuItems = document.querySelectorAll('#menu li');
+let currentIndex = 0;
+menuItems[currentIndex].classList.add('selected');
+
+document.addEventListener('keydown', function (event) {
+    menuItems[currentIndex].classList.remove('selected');
+    if (event.key === 'ArrowDown') {
+        currentIndex = (currentIndex + 1) % menuItems.length;
+    } else if (event.key === 'ArrowUp') {
+        currentIndex = (currentIndex - 1 + menuItems.length) % menuItems.length;
+    }
+    menuItems[currentIndex].classList.add('selected');
+});
