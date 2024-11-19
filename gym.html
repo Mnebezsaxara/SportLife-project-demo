@@ -8,17 +8,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://code.highcharts.com/highcharts.js"></script>
 </head>
 </head>
 <body>
 
 <header>
     <nav class="navbar" id="menu">
-        <ul class="nav-left">
-            <li><a class="nav-link" href="home.html">ГЛАВНАЯ</a></li>
-            <li><a class="nav-link" href="gym.html">ТРЕНАЖЕРНЫЙ ЗАЛ</a></li>
-            <li><a class="nav-link" href="field-beketbatyra.html">ПОЛЯ</a></li>
-            <li><a class="nav-link" href="contact.html">КОНТАКТЫ</a></li>
+        <ul class="nav-left" id="menu">
+            <li><a href="home.html">ГЛАВНАЯ</a></li>
+            <li><a href="field-beketbatyra.html">ПОЛЯ</a></li>
+            <li><a href="gym.html">ТРЕНАЖЕРНЫЙ ЗАЛ</a></li>
+            <li><a href="contact.html">КОНТАКТЫ</a></li>
         </ul>
 
         <div class="nav-center">
@@ -137,6 +138,40 @@
     </div>
 </section>
 
+<section class="timeline">
+    <h2>Events & Competitions Timeline</h2>
+  <div class="timeline-container"> 
+    <div class="event left">
+          <div class="event-content">
+            <h3>Соревнование по кроссфиту</h3>
+            <p>Март 2024 - Завершено</p>
+          </div>
+        </div>
+        
+        <div class="event right">
+          <div class="event-content">
+            <h3>Марафонский забег</h3>
+            <p>Июнь 2024 - Завершено</p>
+          </div>
+        </div>
+        
+        <div class="event left">
+          <div class="event-content">
+            <h3>Мастер-класс по йоге</h3>
+            <p>Декабрь 2024 - Предстоит</p>
+          </div>
+        </div>
+        
+        <div class="event right">
+          <div class="event-content">
+            <h3>Соревнование по пауэрлифтингу</h3>
+            <p>Январь 2025 - Предстоит</p>
+          </div>
+        </div>
+        
+  </div>
+
+</section>
 
 <section class="subscription-section py-5">
     <div class="container-plans">
@@ -188,6 +223,32 @@
     </div>
 </section>
 
+<section class="drag-drop">
+    <h2>Перетащи и Соедини Фитнес-Цели</h2>
+    <p class="description">Перетащите свои цели в соответствующие программы тренировок или верните их обратно.</p>
+  
+    <div class="wrapper">
+      <div id="goals" class="container">
+        <div id="goal1" class="goal" draggable="true" data-program="похудение">Похудеть</div>
+        <div id="goal2" class="goal" draggable="true" data-program="набор-мышц">Набрать Мышечную Массу</div>
+        <div id="goal3" class="goal" draggable="true" data-program="выносливость">Улучшить Выносливость</div>
+      </div>
+
+      <div id="programs" class="container">
+        <div id="program1" class="box" data-program="похудение">
+          <span class="placeholder">Кардио и Диета</span>
+        </div>
+        <div id="program2" class="box" data-program="набор-мышц">
+          <span class="placeholder">Силовые Тренировки</span>
+        </div>
+        <div id="program3" class="box" data-program="выносливость">
+          <span class="placeholder">Тренировки на Выносливость</span>
+        </div>
+      </div>
+    </div>
+  
+</section>
+
 
 <section class="coaches-section my-5">
     <div class="container">
@@ -196,6 +257,35 @@
         </div>
     </div>
 </section>
+
+<section class="chart-review">
+  <div id="container"></div>
+</section>
+
+
+<button class="static-test-btn btn btn-primary btn-lg" id="startTestBtn">Пройти тест</button>
+
+<div class="modal fade" id="testModal" tabindex="-1" aria-labelledby="testModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="testModalLabel">Тест: Определите свой тренировочный стиль</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+            </div>
+            <div class="modal-body">
+               
+                <div id="questionContainer">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="prevBtn" style="display: none;">Назад</button>
+                <button type="button" class="btn btn-primary" id="nextBtn">Далее</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 
 <!-- Contact & Location Section -->

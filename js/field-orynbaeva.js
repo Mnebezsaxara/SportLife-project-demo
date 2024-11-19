@@ -35,28 +35,6 @@ document.querySelector('.burger').addEventListener('click', function(){
 });
 
 
-
-
-const menuItems = document.querySelectorAll('#menu li');
-        let currentIndex = 0;
-        menuItems[currentIndex].classList.add('selected');
-
-        document.addEventListener('keydown', function (event) {
-            menuItems[currentIndex].classList.remove('selected');
-            if (event.key === 'ArrowDown') {
-                currentIndex = (currentIndex + 1) % menuItems.length;
-            } else if (event.key === 'ArrowUp') {
-                currentIndex = (currentIndex - 1 + menuItems.length) % menuItems.length;
-            }
-            menuItems[currentIndex].classList.add('selected');
-        });
-
-
-
-
-
-
-
 ymaps.ready(function () {
     var map = new ymaps.Map("yandex-map", {
         center: [42.318512, 69.612189],
